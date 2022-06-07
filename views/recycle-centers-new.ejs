@@ -1,0 +1,37 @@
+<%-include ("partials/top") %>
+<div class="row space"> 
+  <div class="col-12">
+    <div class="d-flex justify-content-between align-items-center border-bottom pb-2">
+      <h4 class="page-title">Update Waste Recycle Center</h4>
+    </div>
+  </div> 
+</div>
+
+<div class="row space">
+<div class="col-12">
+
+<form action='<%= newEntry ? "/admin/recycle-centers/new" : "/admin/recycle-centers/update" %>' method="POST" class="card">
+  <input type="hidden" name="_id" value='<%= center._id %>'>
+  <fieldset class="row card-body">
+    <div class="form-group col-md-6">
+      <label>Name of Recycling Center: <strong class="text-danger">*</strong></label>
+      <input required type="text" class="form-control" name="shop_name" value='<%= center.shop_name %>' />
+    </div>
+    <div class="form-group col-md-6">
+      <label>Office Address <strong class="text-danger">*</strong></label>
+      <input type="text" class="form-control" name="address" value='<%= center.address %>' />
+    </div>
+    <div class="form-group col-md-6">
+      <label>Telephone <strong class="text-danger">*</strong></label>
+      <input type="text" class="form-control" name="phone" value='<%= center.phone %>' />
+    </div>
+  </fieldset>
+  
+  <div class="form-group mt-4">
+    <button class="btn btn-primary form-control" type="submit">Submit</button>
+  </div>
+</form>
+
+<script>
+
+<%-include ("partials/bottom") %>
